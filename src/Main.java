@@ -1,29 +1,33 @@
-import java.util.Stack;
+import animals.Bird;
+import animals.Snake;
+import animals.Cat;
+import animals.Dog;
+import interfaces.Animal;
 
 public class Main {
     public static void main(String[] args) {
-        Stack<String> stack = new Stack<String>();
-
-//        System.out.println(stack.empty());
-
-        stack.push("Minecraft");
-        stack.push("Skyrim");
-        stack.push("DOOM");
-        stack.push("Borderlands");
-        stack.push("FFVII");
-
-//        String myFavGame = stack.pop();
-//        System.out.println(myFavGame);
-
-//        System.out.println(stack.peek());
+//        Queue<String> queue = new Queue<String>();
 //
-//        System.out.println(stack.search("hi"));
+//        queue.offer("Karen");
+//        queue.offer("Chad");
+//        queue.offer("Steve");
+//        queue.offer("Harold");
+//
+////        System.out.println(queue.isEmpty());
+////        System.out.println(queue.size());
+////        System.out.println(queue.contains("Harold"));
+////        System.out.println(queue.peek());
+//
+//        queue.poll();
+//        queue.poll();
+//        queue.poll();
+//        queue.poll();
+//        queue.peek();
 
-//        System.out.println(stack.search("Fallout"));
-
-        for(int i = 0; i < 1000000000; i++) {
-            stack.push("Fallout76");
-        }
+        // Creating an instance of the animals.Dog class
+        Animal animal = new Bird();
+        // Using the method defined in the interface
+        animal.makeSound();
 
     }
 }
