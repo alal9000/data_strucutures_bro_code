@@ -1,30 +1,25 @@
-import java.util.LinkedList;
-import java.util.Queue;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
-        Queue<String> queue = new LinkedList<String>();
+        Queue<String> queue = new PriorityQueue<>(Collections.reverseOrder());
+//        Queue<Double> queue = new LinkedList<>();
 
-        queue.offer("Karen");
-        queue.offer("Chad");
-        queue.offer("Steve");
-        queue.offer("Harold");
+//        queue.offer(3.0);
+//        queue.offer(2.5);
+//        queue.offer(4.0);
+//        queue.offer(1.5);
+//        queue.offer(2.0);
 
-//        System.out.println(queue.peek());
-//        queue.poll();
-//        queue.poll();
-//        queue.poll();
-//        queue.poll();
-//        System.out.println(queue);
-//
-//     System.out.println(queue.isEmpty());
-//        System.out.println(queue.size());
-//        System.out.println(queue.contains("Harold"));
-//
-//        queue.poll();
-//        queue.poll();
-//        queue.poll();
-//        queue.peek();
+        queue.offer("B");
+        queue.offer("C");
+        queue.offer("A");
+        queue.offer("F");
+        queue.offer("D");
+
+        while(!queue.isEmpty()) {
+            System.out.println(queue.poll());
+        }
 
     }
 }
