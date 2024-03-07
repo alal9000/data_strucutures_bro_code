@@ -2,24 +2,37 @@ import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
-        Queue<String> queue = new PriorityQueue<>(Collections.reverseOrder());
-//        Queue<Double> queue = new LinkedList<>();
+        LinkedList<String> linkedList = new LinkedList<String>();
 
-//        queue.offer(3.0);
-//        queue.offer(2.5);
-//        queue.offer(4.0);
-//        queue.offer(1.5);
-//        queue.offer(2.0);
+        // treat LL like a stack
+        linkedList.push("A");
+        linkedList.push("B");
+        linkedList.push("C");
+        linkedList.push("D");
+        linkedList.push("F");
+        linkedList.pop();
 
-        queue.offer("B");
-        queue.offer("C");
-        queue.offer("A");
-        queue.offer("F");
-        queue.offer("D");
+        // treat LL like a queue
+//        linkedList.offer("A");
+//        linkedList.offer("B");
+//        linkedList.offer("C");
+//        linkedList.offer("D");
+//        linkedList.offer("F");
+//        linkedList.poll();
 
-        while(!queue.isEmpty()) {
-            System.out.println(queue.poll());
-        }
+//        linkedList.add(4, "E");
+//        linkedList.remove("E");
+//        System.out.println(linkedList.indexOf("F"));
+
+//        System.out.println(linkedList.peekFirst());
+//        System.out.println(linkedList.peekLast());
+//        linkedList.addFirst("0");
+//        linkedList.addLast("G");
+//
+//        String first = linkedList.removeFirst();
+//        String last = linkedList.removeLast();
+
+        System.out.println(linkedList);
 
     }
 }

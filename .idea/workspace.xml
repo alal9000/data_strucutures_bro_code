@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="91be738d-e036-4ff4-8ed3-077b5f9ae957" name="Changes" comment="queues">
+    <list default="true" id="91be738d-e036-4ff4-8ed3-077b5f9ae957" name="Changes" comment="priority queues">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
@@ -70,7 +70,14 @@
       <option name="project" value="LOCAL" />
       <updated>1709765282566</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="priority queues">
+      <created>1709769750876</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1709769750876</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -89,6 +96,7 @@
     <MESSAGE value="stacks" />
     <MESSAGE value="did some tinkering with interfaces and polymorphism" />
     <MESSAGE value="queues" />
-    <option name="LAST_COMMIT_MESSAGE" value="queues" />
+    <MESSAGE value="priority queues" />
+    <option name="LAST_COMMIT_MESSAGE" value="priority queues" />
   </component>
 </project>
