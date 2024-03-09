@@ -4,7 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="91be738d-e036-4ff4-8ed3-077b5f9ae957" name="Changes" comment="priority queues">
+    <list default="true" id="91be738d-e036-4ff4-8ed3-077b5f9ae957" name="Changes" comment="linked lists">
+      <change afterPath="$PROJECT_DIR$/src/DynamicArray.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
@@ -40,6 +41,20 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true"
   }
 }]]></component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="data-structures-algorithms-bro-code" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -77,7 +92,14 @@
       <option name="project" value="LOCAL" />
       <updated>1709769750876</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="linked lists">
+      <created>1709772503846</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1709772503846</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -97,6 +119,19 @@
     <MESSAGE value="did some tinkering with interfaces and polymorphism" />
     <MESSAGE value="queues" />
     <MESSAGE value="priority queues" />
-    <option name="LAST_COMMIT_MESSAGE" value="priority queues" />
+    <MESSAGE value="linked lists" />
+    <option name="LAST_COMMIT_MESSAGE" value="linked lists" />
+  </component>
+  <component name="XDebuggerManager">
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="data" language="JAVA" custom="java.util.concurrent.Executors" />
+        <watch expression="i" language="JAVA" />
+        <watch expression="j" language="JAVA" />
+        <watch expression="array" language="JAVA" />
+        <watch expression="size" language="JAVA" />
+        <watch expression="capacity" language="JAVA" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>

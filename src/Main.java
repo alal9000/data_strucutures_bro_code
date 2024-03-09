@@ -2,37 +2,29 @@ import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
-        LinkedList<String> linkedList = new LinkedList<String>();
 
-        // treat LL like a stack
-        linkedList.push("A");
-        linkedList.push("B");
-        linkedList.push("C");
-        linkedList.push("D");
-        linkedList.push("F");
-        linkedList.pop();
+        DynamicArray dynamicArray = new DynamicArray(5);
 
-        // treat LL like a queue
-//        linkedList.offer("A");
-//        linkedList.offer("B");
-//        linkedList.offer("C");
-//        linkedList.offer("D");
-//        linkedList.offer("F");
-//        linkedList.poll();
+        dynamicArray.add("A");
+        dynamicArray.add("B");
+        dynamicArray.add("C");
+        dynamicArray.add("D");
+        dynamicArray.add("E");
+        dynamicArray.add("F");
 
-//        linkedList.add(4, "E");
-//        linkedList.remove("E");
-//        System.out.println(linkedList.indexOf("F"));
+        dynamicArray.delete("A");
+        dynamicArray.delete("B");
+        dynamicArray.delete("C");
 
-//        System.out.println(linkedList.peekFirst());
-//        System.out.println(linkedList.peekLast());
-//        linkedList.addFirst("0");
-//        linkedList.addLast("G");
-//
-//        String first = linkedList.removeFirst();
-//        String last = linkedList.removeLast();
+//        dynamicArray.insert(0, "X");
+//        dynamicArray.delete("A");
+//        System.out.println(dynamicArray.search("C"));
 
-        System.out.println(linkedList);
+        System.out.println(dynamicArray);
+        System.out.println("size: " + dynamicArray.size);
+        System.out.println("capacity: " + dynamicArray.capacity);
+        System.out.println("empty: " + dynamicArray.isEmpty());
+
 
     }
 }
