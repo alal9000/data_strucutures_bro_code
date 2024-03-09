@@ -3,28 +3,53 @@ import java.util.*;
 public class Main {
     public static void main(String[] args) {
 
-        DynamicArray dynamicArray = new DynamicArray(5);
+        LinkedList<Integer> linkedList = new LinkedList<Integer>();
+        ArrayList<Integer> arrayList = new ArrayList<Integer>();
 
-        dynamicArray.add("A");
-        dynamicArray.add("B");
-        dynamicArray.add("C");
-        dynamicArray.add("D");
-        dynamicArray.add("E");
-        dynamicArray.add("F");
+        long startTime;
+        long endTime;
+        long elapsedTime;
 
-        dynamicArray.delete("A");
-        dynamicArray.delete("B");
-        dynamicArray.delete("C");
+        for (int i = 0; i < 1000000; i++) {
+            linkedList.add(i);
+            arrayList.add(i);
+        }
 
-//        dynamicArray.insert(0, "X");
-//        dynamicArray.delete("A");
-//        System.out.println(dynamicArray.search("C"));
+        //**********LinkedList****************
 
-        System.out.println(dynamicArray);
-        System.out.println("size: " + dynamicArray.size);
-        System.out.println("capacity: " + dynamicArray.capacity);
-        System.out.println("empty: " + dynamicArray.isEmpty());
+        startTime = System.nanoTime();
 
+//        linkedList.get(0);
+//        linkedList.get(500_000);
+//        linkedList.get(999_999);
+//        linkedList.remove(0);
+//        linkedList.remove(500_000);
+        linkedList.remove(999_999);
+        endTime = System.nanoTime();
+
+        elapsedTime = endTime - startTime;
+
+        System.out.println("LinkedList:\t" + elapsedTime + " ns");
+
+
+
+
+
+        //**********ArrayList*****************
+
+        startTime = System.nanoTime();
+
+//        arrayList.get(0);
+//        arrayList.get(500_000);
+//        arrayList.get(999_999);
+//        arrayList.remove(0);
+//        arrayList.remove(500_000);
+        arrayList.remove(999_999);
+        endTime = System.nanoTime();
+
+        elapsedTime = endTime - startTime;
+
+        System.out.println("arrayList:\t" + elapsedTime + " ns");
 
     }
 }
