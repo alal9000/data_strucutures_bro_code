@@ -1,55 +1,23 @@
-import java.util.*;
-
 public class Main {
     public static void main(String[] args) {
 
-        LinkedList<Integer> linkedList = new LinkedList<Integer>();
-        ArrayList<Integer> arrayList = new ArrayList<Integer>();
 
-        long startTime;
-        long endTime;
-        long elapsedTime;
+        System.out.println(addUpLinear(1_000_000));
 
-        for (int i = 0; i < 1000000; i++) {
-            linkedList.add(i);
-            arrayList.add(i);
+        System.out.println(addUpConstant(1_000_000));
+
+    }
+
+    static long addUpLinear(long n) {
+        long sum = 0;
+        for (int i = 1; i <= n; i++) {
+            sum += i;
         }
+        return sum;
+    }
 
-        //**********LinkedList****************
-
-        startTime = System.nanoTime();
-
-//        linkedList.get(0);
-//        linkedList.get(500_000);
-//        linkedList.get(999_999);
-//        linkedList.remove(0);
-//        linkedList.remove(500_000);
-        linkedList.remove(999_999);
-        endTime = System.nanoTime();
-
-        elapsedTime = endTime - startTime;
-
-        System.out.println("LinkedList:\t" + elapsedTime + " ns");
-
-
-
-
-
-        //**********ArrayList*****************
-
-        startTime = System.nanoTime();
-
-//        arrayList.get(0);
-//        arrayList.get(500_000);
-//        arrayList.get(999_999);
-//        arrayList.remove(0);
-//        arrayList.remove(500_000);
-        arrayList.remove(999_999);
-        endTime = System.nanoTime();
-
-        elapsedTime = endTime - startTime;
-
-        System.out.println("arrayList:\t" + elapsedTime + " ns");
-
+    static long addUpConstant(long n) {
+        long sum = n * (n + 1) / 2;
+        return sum;
     }
 }
