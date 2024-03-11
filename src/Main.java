@@ -1,23 +1,26 @@
 public class Main {
     public static void main(String[] args) {
+        int[] array = {9, 1, 8, 2, 7, 3, 6, 4, 5};
 
+        int index = linearSearch(array, 50);
 
-        System.out.println(addUpLinear(1_000_000));
+        if (index != -1) {
+            System.out.println("Element found at index: " + index);
 
-        System.out.println(addUpConstant(1_000_000));
+        } else {
+            System.out.println("Element not found");
 
-    }
-
-    static long addUpLinear(long n) {
-        long sum = 0;
-        for (int i = 1; i <= n; i++) {
-            sum += i;
         }
-        return sum;
+
+
     }
 
-    static long addUpConstant(long n) {
-        long sum = n * (n + 1) / 2;
-        return sum;
+    private static int linearSearch(int[] array, int value) {
+        for (int i = 0; i < array.length; i++ ) {
+            if (array[i] == value) {
+                return i;
+            }
+        }
+        return -1;
     }
 }
