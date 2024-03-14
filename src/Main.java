@@ -1,26 +1,41 @@
+import java.util.Arrays;
+
 public class Main {
     public static void main(String[] args) {
-        int[] array = {9, 1, 8, 2, 7, 3, 6, 4, 5};
+        int[] array = new int[1000000];
+        int target = 777777;
 
-        int index = linearSearch(array, 50);
-
-        if (index != -1) {
-            System.out.println("Element found at index: " + index);
-
-        } else {
-            System.out.println("Element not found");
-
+        for (int i = 0; i < array.length; i++) {
+            array[i] = i;
         }
 
+//        int index = Arrays.binarySearch(array, target);
+        int index = binarySearch(array, target);
+
+        if (index == -1) {
+            System.out.println(target + " not found");
+        }
+        else {
+            System.out.println("Elment found at: " + index);
+        }
 
     }
 
-    private static int linearSearch(int[] array, int value) {
-        for (int i = 0; i < array.length; i++ ) {
-            if (array[i] == value) {
-                return i;
-            }
+    private static int binarySearch(int[] array, int target) {
+        int low = 0;
+        int high = array.length - 1;
+
+        while (low <= high) {
+            int middle = low + (high - low) / 2;
+            int value = array[middle];
+
+            System.out.println("Middle: " + value);
+
+            if (value < target) low = middle + 1;
+            else if (value > target) high = middle - 1;
+            else return middle; // target found
+
         }
-        return -1;
+        return -1; // target not found
     }
 }

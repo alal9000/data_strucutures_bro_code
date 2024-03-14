@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="91be738d-e036-4ff4-8ed3-077b5f9ae957" name="Changes" comment="big O notation">
+    <list default="true" id="91be738d-e036-4ff4-8ed3-077b5f9ae957" name="Changes" comment="linear search">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
@@ -119,7 +119,14 @@
       <option name="project" value="LOCAL" />
       <updated>1710196310413</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="linear search">
+      <created>1710197538264</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1710197538264</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -143,7 +150,8 @@
     <MESSAGE value="dynamic arrays" />
     <MESSAGE value="linkedlists vs arraylists" />
     <MESSAGE value="big O notation" />
-    <option name="LAST_COMMIT_MESSAGE" value="big O notation" />
+    <MESSAGE value="linear search" />
+    <option name="LAST_COMMIT_MESSAGE" value="linear search" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
