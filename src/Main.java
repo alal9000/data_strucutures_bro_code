@@ -2,40 +2,43 @@ import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {
-        int[] array = new int[1000000];
-        int target = 777777;
+        int[] array = {1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024};
 
-        for (int i = 0; i < array.length; i++) {
-            array[i] = i;
-        }
+        int index = interpolationSearch(array, 256);
 
-//        int index = Arrays.binarySearch(array, target);
-        int index = binarySearch(array, target);
-
-        if (index == -1) {
-            System.out.println(target + " not found");
+        if (index != -1) {
+            System.out.println("Element found at index: " + index);
         }
         else {
-            System.out.println("Elment found at: " + index);
+            System.out.println("Element not found");
         }
+
 
     }
 
-    private static int binarySearch(int[] array, int target) {
-        int low = 0;
+    private static int interpolationSearch(int[] array, int value) {
         int high = array.length - 1;
+        int low = 0;
 
-        while (low <= high) {
-            int middle = low + (high - low) / 2;
-            int value = array[middle];
+        while (value >= array[low] && value <= array[high] && low <= high) {
+            int probe = low + (high - low) * (value - array[low]) /
+                        (array[high] - array[low]);
 
-            System.out.println("Middle: " + value);
+            System.out.println("Probe: " + probe);
 
-            if (value < target) low = middle + 1;
-            else if (value > target) high = middle - 1;
-            else return middle; // target found
+            if (array[probe] == value) {
+                return probe;
+            }
+            else if (array[probe] < value) {
+                low = probe + 1;
+
+            }
+            else {
+                high = probe -1;
+            }
 
         }
-        return -1; // target not found
+
+        return -1;
     }
 }
