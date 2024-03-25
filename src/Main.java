@@ -2,26 +2,30 @@ import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {
-        int[] array = {8, 7, 9, 2, 3, 1, 5, 4, 6};
-        
-        selectionSort(array);
+        int[] array = {9, 1, 8, 2, 7, 3, 6, 5, 4 };
+
+        insertionSort(array);
 
         for (int i : array) {
-            System.out.println(i);
+            System.out.print(i + " ");
+
+        }
+
+    }
+
+    private static void insertionSort(int[] array) {
+
+        for (int i = 1; i < array.length; i++) {
+            int temp = array[i];
+            int j = i - 1;
+
+            while (j >= 0 && array[j] > temp) {
+                array[j + 1] = array[j];
+                j--;
+            }
+            array[j + 1] = temp;
+
         }
     }
 
-    private static void selectionSort(int[] array) {
-        for (int i = 0; i < array.length - 1; i++) {
-            int min = i;
-            for (int j = i + 1; j < array.length; j++) {
-                if (array[min] < array[j]) {
-                    min = j;
-                }
-            }
-            int temp = array[i];
-            array[i] = array[min];
-            array[min] = temp;
-        }
-    }
 }
