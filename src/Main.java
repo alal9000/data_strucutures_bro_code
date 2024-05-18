@@ -1,23 +1,27 @@
-import java.util.Hashtable;
+import adjacencyMatrix.Graph;
+import adjacencyMatrix.Node;
 
 public class Main {
     public static void main(String[] args) {
-        Hashtable<String, String> table = new Hashtable<>(21);
+        Graph graph = new Graph(5);
 
-        table.put("100", "Spongebob");
-        table.put("123", "Patrick");
-        table.put("321", "Sandy");
-        table.put("555", "Squidward");
-        table.put("777", "Gary");
+        graph.addNode(new Node('A'));
+        graph.addNode(new Node('B'));
+        graph.addNode(new Node('C'));
+        graph.addNode(new Node('D'));
+        graph.addNode(new Node('E'));
 
-//        table.remove(777);
+        graph.addEdge(0, 1);
+        graph.addEdge(1, 2);
+        graph.addEdge(2, 3);
+        graph.addEdge(2, 4);
+        graph.addEdge(4, 0);
+        graph.addEdge(4, 2);
 
+        graph.print();
 
-
-        for (String key : table.keySet()) {
-            System.out.println(key.hashCode() % 21 + "\t" + key + "\t" + table.get(key));
-
-        }
+        System.out.println(graph.checkEdge(0, 1));
+        System.out.println(graph.checkEdge(3, 2));
 
     }
 
