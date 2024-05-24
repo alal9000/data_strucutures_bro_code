@@ -1,10 +1,10 @@
-import adjacencyList.Graph;
-import adjacencyList.Node;
+import adjacencyMatrix.Graph;
+import adjacencyMatrix.Node;
 
 public class Main {
     public static void main(String[] args) {
 
-        Graph graph = new Graph();
+        Graph graph = new Graph(5);
 
 
         graph.addNode(new Node('A'));
@@ -22,6 +22,8 @@ public class Main {
         graph.addEdge(4, 2);
 
         graph.print();
+
+        graph.depthFirstSearch(4);
 
     }
 
