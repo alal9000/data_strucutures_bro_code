@@ -23,7 +23,7 @@ public class Main {
 
         graph.print();
 
-        graph.depthFirstSearch(4);
+        graph.breadthFirstSearch(4);
 
     }
 
