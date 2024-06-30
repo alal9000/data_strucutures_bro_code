@@ -1,27 +1,18 @@
-import binarySearchTree.BinarySearchTree;
-import binarySearchTree.Node;
+import playground.Person;
+
+import java.util.ArrayList;
 
 public class Main {
-    public static void main(String[] args) {
-        BinarySearchTree tree = new BinarySearchTree();
+    public static void main(String[] args) throws InterruptedException {
+        long start = System.nanoTime();
 
-        tree.insert(new Node(5));
-        tree.insert(new Node(1));
-        tree.insert(new Node(9));
-        tree.insert(new Node(2));
-        tree.insert(new Node(7));
-        tree.insert(new Node(3));
-        tree.insert(new Node(6));
-        tree.insert(new Node(4));
-        tree.insert(new Node(8));
+        // program start
 
-        tree.remove(0);
-        tree.display();
+        Thread.sleep(3000);
 
-//        System.out.println(tree.search(10));
+        // program end
 
-
-
+        long duration = (System.nanoTime() - start)/1000000;
+        System.out.println(duration + "ms");
     }
-
 }
