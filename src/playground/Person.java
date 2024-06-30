@@ -24,6 +24,6 @@ public class Person {
     }
 
     public void greeting() {
-        System.out.println("My name is " + name + ", I am " + age + " years old and work as a " + job);
+        System.out.println("My name is " + name + ", I am " + age + " years old and my job is " + job);
     }
 }
