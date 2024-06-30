@@ -1,0 +1,308 @@
+
+====================================================================================================================================================================================================================================
+
+BROCODE:
+
+-data structure: named location that can be used to store and organise data ie: family tree (heirarchy of family relationships)
+-array: a collection of elements stored at contiguous memory locations
+-different DS store and organise data in different ways
+-algorithm: a collection of steps to solve a problem ie: problem is im hungry, algorithm: make fries - 1. heat oven, 2. put in fries, 3. bake for 30mins, 4. serve with salt and pepper and enjoy
+
+-why learn DS & A: 1. write code that is both time and memory efficient 2. commonly asked questions involve DS & A in coding interviews
+-stack: LIFO ds. Last in first out. Stores objects into a sort of vertical tower. push() to add to the top and pop() to remove from the top
+-stacks are not zero indexed when using the search method
+-stacks have 5 unique methods: push, pop, peek, empty, search
+-it is possible to run out of memory when adding objects to our stacks ie: add 1 billion objects
+-uses of stacks: 1. undo /redo features in text editors, 2. moving backward and forward through browser history, 3. backtracking algos, 4. calling functions (call stack)
+
+-queues: FIFO - first in first out ie: a line of people (first come, first serve)
+-queues are a linear data structure and is a collection designed for holding elements prior to processing. head pointer is the front of the line and tail pointer is the back
+-enqueue: add to tail of que
+-dequeue: remove from from head of que
+-an Interface is a template that we can apply to another class to enforce a contract
+-we cannot instantiate an interface directly, instead we have to instantiate a class that implements the interface - so to use an interface we need to use a class that implements the interface
+-3 methods of Queues: 1. add: offer() - enqueue from head, remove: poll() - dequeue from tail, examine: peek() - examine the head. These return special values there is three equivilent methods that throw exceptions but according to the docs its better to use the ones that dont throw exceptions
+-interfaces allow for flexibility and polymorphism in java as different classes can implement the same interface in different ways while still being used interchangeably whereever that interface is expected
+-queues used in keyboard buffers, printer queues, LinkedLists, PriorityQueues
+
+-priority queue: FIFO DS, that serves elements with the highest priorities first before elements with lower priority
+-priority queues are just like ques, but first we sort the elements based on a certain priority ie: numbers ascending order, characters/strings alphabetical
+-FIFO: first come first serve
+-object: data and behaviour encapsulator
+-a statement in programming is a syntactic unit that expresses an action to be carried out. It represents a complete instruction that the computer can execute. In languages like C, C++, Java and JS statements are typically terminated by a semi-colon. some statement examples: assignment, declaration, control flow, function call
+-control flow statements: conditional (if, else, switch), loop (for, for-each, while, do-while), jump (continue, break, return) 
+-priorityqueues: the que will be served and displayed in ascending order for numbers and alphabetical order for strings. A comparator such as Collections.reverse() can be passing inside the constructor upon instantiation ie: new PriorityQueue<>(Collections.reverseOrder());
+
+
+-arrays are great for searching and randomly accessing elements because they are contiguous and indexed but not so great at inserting or deleting elements because the size is fixed and we have to expand / contract the array and reshuffle items around
+-In contrast to above, LinkedLists are great for inserting / deleting elements but not so great at randomly accessing elements (they are not indexed)
+-LinkedList: made up of a long chain of nodes, each node contains two parts: 1. Some data we need to store 2. An address to the next node in line (also referred to as a pointer) - LinkedList are non-contiguous (anywhere with memory) and non-indexed. Each node knows where the next node resides. 
+-The first node in a LL is called the head (contains only the address to the first node) while the last is called the Tail (has null pointer for final memory address)
+-insert / delete new elements (nodes) in a LL is super easy, there is no shifting of elements involved, we just need to update the memory address of the pointers. 
+-LL Insert: assign the address of the previous node to the new node we are inserting (in the middle of previous and next nodes) and assign the address of the new node to the next node in line (what the previous node address was pointing to). This will essentially insert the new node inbetween the previous and next nodes
+-LL Delete: delete is even more easy than insert (the node to be deleted is in the middle of the previous and next nodes), we just replace the address of the previous node to what the deleted node was pointing to, because the deleted node now no longer has a pointer pointing to it from a node it is essentially removed (disconnected) from the chain and if there are no other references to the deleted node, it becomes eligible for garbage collection and the garbage collector will automatically remove it. 
+-address pointer in a node in a LL are typically known as 'next' pointers or references
+-the garbage collector is responsible for freeing up memory of unused resources - something you would need to do manually in a language like C is done automatically in language like Java
+-LL although unlike arrays are bad at searching and accessing. To find an element in a LL we have to start at the head and traverse the LL towards the tail (for singly LL only, we can start at the head or tail for doubly LL) until we find the element that we are looking for. This is an expensive operation which takes linear time or O(n) (number of independant operations increase along with the amount of nodes in the list ie: n) in the worst case because the element we are looking for might be at the end of the list. But inserting or deleting takes constant time or O(1) which is super fast in the best case as we may want to insert at the begininng or end of the LL. So we look at best and worst case scenarios when doing Big O notation assesments
+-there is a variation of the standard LL (singly) which is called a doubly LL. In this version it has two memory address pointers, one for the next node and one for the previous node, so it takes additional memory to store each node. 
+-The benefit of a doubly linked list is we can traverse in either direction, head -> tail or tail -> head - each node knows where the next and previous node is.
+-A Deque is more or less a double ended que, insertion and removal can be done at both ends
+-we can treat (mimick) our LL like a stack or a que we can push(), pop(), poll() and offer()
+-to add / remove from LL in java its super easy as there is add(), remove() methods defined in the LinkedList class last which implements the List<E> interface which said class implements
+-where LinkedLists have advantages over Arrays and ArrayLists is the insertion and deletion of nodes - however the caveat is we still need to traverse the LL in order to find where we want to insert / delete, there is no random access
+-with zero indexing we are often 1 behind where we would normally think we are because we are starting from zero so we use up an extra number to account for the zero. So we often have to add 1 to account for the zero. When counting up using zero indexing we are always one ahead of where we would normally be because we have to account for the exra 0. ie: count to 3: 1, 2, 3 (3 spots) compared to 0, 1, 2, 3 (4 spots)
+-a LL is a DS that stores a series of nodes, each node contains two parts: 1. some data 2. an address - nodes are stored in non-consecutive memory locations - the pointers (address) within a node point to the memory address where the next node lives
+-advantages of LL: 1. dynamic DS, they can allocate needed memory while our program is currently running 2. insertion and deletion of nodes is really easy ie: O(1) or constant time in best case scenarios 3. there is low to no memory waste
+-disadvantages of LL: 1. greater memory usage because of storage of additional pointer (more for doubly LL) 2. no random access of elements (no index[i]) 3. accessing and searching elements is more time consuming. O(n) or linear time
+-uses of LL: 1. implement Stacks/Queues - if you need a stack or que for anything you could also use a LL. 2. GPS navigation - each node is like a stop or waypoint with the first node being starting position and last node being the final destination, a detour would insert and delete a node and re-calculate the route 3. music play list - each song doesn't need to be next to each other within your computers memory 
+
+
+-dynamic array: array with a resizeable capacity, we can increase the size if we want to add elements or conversly reduce to remove. Standard arrays are fixed size - the capacity is determined at compile time adn we can't change it later. Dynamic arrays are known as ArrayList in Java and Lists in python
+-static arrays: We can access array elements in O(1) constant time but searching for an element is O(n) linear time because we have to iterate or traverse the array until reach value or get to end, the larger the data set, the time to finish will increase linearly
+-static arrays: inserting or deleting is done in linear time and elements need to be shifted. When we are close to index zero all elements that follow need to be shifted so O(n) - insert shift to right, remove shift to left
+-dynamic array has own inner static array with fixed size, once capacity is reached it will declare an instantiate a new array with an increased capacity depending on programming language but usually between 1.5 - 2x
+-advantages of dynamic arrays: 1. dynamic sizing, 2. random access of elements O(1), 3. easy to insert or delete at end, because no shifting of elements
+-disadvantages of dynamic arrays: 1. wastes more memory (expand for extra room that we may not need), 2. shifting elements is expensive O(n), 3. expanding / shrinking is expensive O(n) (copy over elements to new array)
+
+-first steps to filling out a method usually involves doing some sort of checks and validations
+-every class in java is a subclass of Object so its the root class of all classes or the parent 
+-for loops are when we know the amount of iterations beforehand. While loops we dont need to know the amount of iterations beforehand. foreach loops are specifically designed for iterating over elements in a collection, we dont need to know the size of the collection beforehand
+-memory allows a computer to remember values, instructions and data temporarily while its turned on and running - when the computer is turned off the data stored in memory is lost (except for data stored on the disk)
+-with dynamic arrays (ArrayList) inserting or removing from the end is going to be faster because we have shift less elements
+-in most situations an ArrayList will outperform in terms of time to a LinkedList - except if you need to do a lot of inserting and deleteing in a large dataset, a LinkedList might be better
+-big O notation: describes the performance of an algorithm as the amount of data increases - a common phrase: "How code slows as data grows"
+-big O notation: at its heart describes the number of steps to complete an algorithm - it is also machine independant
+-big O notation: we ignore smaller operations ie: O(n + 1) -> O(n) - we are rounding here because the + 1 is negligble
+-big O notation: best and worse case scenarios are a thing: when we analyse how long it takes to do something we look at it in a best and worst case scenario
+-big O notation runtime complexity examples: O(1) - constant time, O(n) - linear time, O(log n) - logarithmic time, O(n^2) - n here is just the amount of data that we are passing in (a variable like x) ie: does an array have a million elements or 5? here n will describe the amount of elements
+
+-the time complexity of an algorithm describes how its runtime grows with the input size ie: O(n), O(n^2)
+
+-O(n) linear time: the amount of steps it takes to complete the function grows with the input it receives n: if n is a large number like a million then that number is proportionate (or linear) to the amount of steps it takes to complete the function. As the amount of data increases, the number of steps will increase proportionately (linearly).  - ie: a loop that has to iterate the size of an array, if the array has 1million elements then the loop iterates 1million times, if it has only 3 elements then there is only 3 loops. 
+-O(1) constant time: the input size does not matter in relation to the amount of steps required to complete the function - usually the number of steps is small like 1 - 3 ie: accessing an element at an array index is constant time and is a small number of steps, look up the index and return the number
+-O(log n) logarithmic time: takes increasingly less time to complete. As the data size increases, the algorithim is going to be more and more effecient, compared to the early stages with a small dataset. The amount of steps or time increase proportional to the data increase, is neglible. They typically divide the problem size in half with each step  - they perform well for large data sets. ie: binary search
+-O(n^2): quadratic time: fast for small datasets but as the dataset increases, it takes a larger number of steps to complete - the time taken by the algorithm to complete its task increases as the square of the size of the input dataset ie: insertion sort, selection sort, bubblesort. It is very slow for large datasets ie: if we have a dataset of n = 1000 then 1000 * 1000 is way slower than O(n) because it would just be 1000 steps in line with the size of the dataset
+-O(n log n): quasilinear time: as the data size increases, it takes more steps to complete. ie: quick, merge and heap sort. They are faster than quadratic time but slower than linear time
+
+-a logarithm is a mathmatical function that represents the exponent to which a base must be raised to produce a given number ie: log(100) = 2 - here the log of 100 is 2 because a base 10 must be raised by two to produce the given number 100 - logarithms often appear in the time complexity analysis of algorithms, especially algorithms that divide the problem space into smaller parts repeatedly such as binary search or divide and conquer algorithms like merge and quick sort. logs basically describe like an exponential relationship
+-O(n!): factorial time - this is the slowest of them all as the dataset increases
+-grading with large datasets: O(1) A+, O(log n) B, O(n) C, O(n log n) D, O(n^2) F, O(n!) E - some of these are faster although with small datasets
+
+-linear search: iterate through a collection one element at a time. Runtime complexity: O(n). Disadvantages: slow for large datasets. Advantages: fast for searches of small to medium datasets, does not need to be sorted, useful for data-structures that do not have random access (LinkedList).
+-sentinal value: specific value or signal to indicate a particular condition or state of a program ie: return -1 to indicate an error has occured, anything else indicates success
+-binary search: search algorithm that finds the position of a target value within a sorted array. Half the array is eliminated during each "step". We need to deal with sorted arrays for binary search to work. They are not too efficient when working with small datasets, but they are great for large datasets. The runtime complexity is O(log n) - the larger the dataset a binary search becomes more and more efficient compared to other search algorithms
+-variables declared within a while loop only have local scope within that loop and they will be reset after each iteration then remade on the new iteration
+-interpolation search: improvement over binary searchm best used for "uniformly" distributed data (ie: all numbers in the array increase by the same value) - we make "guesses" where a value might be based on calculated probe results, if the probe is incorrectm the search area is narrowed and a new probe is calculated ie: if the probe is incorrect, we narrow the search and try again
+-interpolation search: average runtime complexity - O(log(log (n))). Worst case runtime complexity - O(n) when the values within our collection increase exponentially (ie: values double)
+-bubble sort: pairs of adjacent elements are compared and swapped if they are not in order. Then the next pair of adjacent elements are checked and swapped and this repeats until the collection is sorted
+-bubble sort is not very efficient (but its pretty easy to write), even for small datasets so most likely we would use a different sorting algo. It has a runtime complexity of O(n^2) quadratic time - the larger the dataset the more and more inefficient the sorting algo will be, so bubble sort is not good for large datasets
+-in nested loops, the inner loop has to finish all its iterations before the outer loop can proceed to the next iteration
+-selection sort: Search through an array and keep track of the minimum value during each iteration. At the end of each iteration, we swap variables. It has a runtime complexity of O(n^2) quadratic time - the larger the dataset the more and more inefficient this algo will become, although its ok with smaller datasets, so small dataset = ok, large dataset = bad.
+-insertion sort: after comparing elements to the left, we shift elements to the right to make room to insert a value. The runtime complexity is done in quadratic time (On^2) - its ok for small datasets but bad for larger datasets.
+
+-insertion sorts tends to be preferable to both bubble and selection sort. It uses less steps than bubble sort. In the best case scenario, insertion sort can run in linear time O(n) compared to selection sort where the best case scenario is it running in O(n^2) quadratic time.
+
+-insertion sort is like a jigsaw puzzle. Pieces are connected together and we move them around until everything fits and is in place.
+
+-recursion: a thing is defined in terms of itself. We apply the result of a function to a function. A recursive function calls itself. It can be a substitute for iteration
+
+-recursion: a function calls itself within its own definition
+
+-recursion is commonally used with advanced sorting algos and navigating trees
+
+-advantanges of recursion: 1. easier to read and write 2. easier to debug
+
+-disadvantanges of recursion: 1. sometimes slower 2. uses more memory
+
+-iteration is the repetition of a process while recursion is the repetition of a proceedure
+
+-with recursion we need a base case. That is what we do when we would like to stop and we need a recursive case, that is what we do when we would like to continue
+
+-call stack: programs have a data structure called the "call stack". this stores information about the active sub routines of a computer program and records the order in which functions and proceedures are called. the call stack keeps track of the order in which our program needs to function
+
+-recursion is sometimes slower and uses more memory because we adding more frames to the call stack, there is more methods that we have to keep track of
+
+-with recursion its possible to run out of mnemory ie: stackoverflow error
+
+-factorial: the product of an integer and all the integers below it ie: ie: 4! is 4 x 3 x 2 x 1 = 24
+
+-recursive functions have two parts: 1. the base case (termination condition) 2. recursive case (the function calling itself while converging to base case)
+
+-with recursion we need to converge towards the base case (termination condition) otherwise the function will call itself infinitely.
+
+-void methods do not return a value but non-void methods do, so we can only use the return keyword in a void method to exit the function early (ie: if some condition is met) we can't use it to return a value otherwise we will get a compile time error. non-void methods must use the return keyword to return a value, if not we will also get a compile time error
+
+-methods that return a value: all execution paths must lead to a return statement otherwise we will get a compile time error. This is not true for void methods as they do not return a value and are not using the return keyword to return anything only exit the function early
+
+-do visualization of recursion table and call stack for power(2, 2)
+
+-recursion is often used in advanced sorting algos and navigating trees
+
+-merge sort: recursively divide array in 2, sort then re-combine them
+
+-merge sort runtime complexity is O(n log n) - when working with large datasets, merge sort is faster than insertion sort, selection sort and bubble sort, however mergesort uses more space than these algos because of the new subarrays
+
+-merge sort space complexity is O(n) - we need more space then bubble, selection and insertion sort because they can sort in place O(1) but with merge sort we need to create additional sub arrays
+
+-recursive method: a method that calls itself
+
+-a helper method or utility function is just a method that helps another method
+
+-nested loops are useful whenever we need to perform iterative tasks that involve multiple levels of iteration 
+
+-quick sort: check to see if the value at j is less than our pivot, if its greater or equal we ignore it and increment j by 1 - i only comes into play if j is less than our pivot, in this case we increment i and swap the values at i and j then increment j. Once j reaches our pivot we know where the final resting place of our pivot is going to be, it will be i incremented by 1 finally we swap the value at index i with the value at our pivot. Once the final pivot is in place, elements to the right should be greater than our pivot and elements to the left should be less. We then create two partitions from either side of the pivot and call quicksort on each partition. Quicksort is a recursive divide and conquer algo.
+
+-quick sort: moves smaller elements to the left of a pivot. We recursively divide array into two partitions and pass those partitions as arguments recursively into the quick sort function
+
+-quick sort runtime complexity: O(n log n) - quasilinear - most of the time for worst case
+
+-quick sort space complexity: O(log n) - because it uses recursion, it adds frames to the call stack which takes more memory that some other algos
+
+
+-hash tables: a collection of key / value pairs. Each key / value pair is known as an entry
+
+-when we put the entries key into a hashCode it will spit out the index of where we should place the item in the hash table as an integer, this integer is known as a hash. When two entries spit out the same hash, this is known as a collision and it needs to be handled seperately
+
+-hashtable: a data structure that stores unique keys to values ie: integer and string
+
+-bucket in hash table: where the actual data (key / value) is stored
+
+-the most common solution for handling collisions in a hash table is by turning the bucket where the collision happended into a linked list. Where the first entry points to the address of the second entry. This process is known as chaining. We iterate over these linked lists linearly untill we find the entry we are looking for
+
+-collisions can help to be avoided by increasing the size of the hash table but then it would take more memory so a balance has to be struck
+
+-the less collisions that there are the more efficient a hash table will look up a value
+
+-a bucket is just a cell in a hashtable where the key / value pair lives. Each index is also known as a bucket, its an indexed storage location for one or more entries
+
+-a set is iterable in java
+
+-hashtable collision: a hash functions generates the same index for more than one key. Less collisions = more efficiency
+
+-runtime complexity of hash table: Best case O(1) - with no collisions and worst case O(n) - when all our entries are in a linkedlist (ie: have same index). So on average the run time complexity will be somewhere in between this range
+
+-we can get the index of an entry by taking the hashcode and applying the modulus operator on it. ie: key.hashCode() % 10
+
+-in a hashtable, different data types will have different hashcode formulas
+
+-benefits of hashtables: fast insertion, look up and deletion of key / value pairs. They are great with large data sets but not ideal for smaller ones (large overhead)
+
+-hashing: takes a key and computes an integer (formula is based on key and data type)
+
+-to calculate the index for hashtable entries we take a hash and modulus it by the hashtable capacity
+
+-a graph is a non linear aggregation of nodes and edges. There are two types of graphs, directed and undirected.
+
+-a directed graph has nodes which have two way relationship each other, ie: facebook friends. An undirected graph has edges that will link one node to another but only have one way direction with each other.
+
+-adjacency in graphs means relationship. ie: a node for directed graph has two way adgancency while node for undirected only has one way
+
+-there are two popular ways to represent a graph, an adjacency matrix and an adjancency list
+
+-adjacency matrix: quick to look up an edge O(1) but it takes up a lot of room O(n^2) - tends to suit graphs that have a lot of edges
+
+-adjacency list is an array (or arrayList) of linked lists - each element is a seperate linkedlist. Each header within the linkedlist (each index of the original array) would contain the address of the next node
+
+-adjacency list: time complexity O(n) and space complexity O(n + e) n is nodes and e is edges. They take up less space than the adjacency matrix
+
+-graphs can be used to model a network, each node is a piece of data within our network and an edge connects nodes
+
+-node: bucket or container for a piece of data
+
+-edge: a connection between two nodes 
+
+-adjacency matrix: a 2d array to store 1s/0s to represent edges between nodes. The number of rows and columns is equal to the amount of unique nodes. The runtime complexity to check an edge is O(1) - all we need are two indices. The space complexity is O(v^2) (total nodes squared)
+
+-when you get the length of a 2d array it will return the number of rows
+
+-declaration of an object: tells the system about the existence of an object, including its type but it does not allocate memory or assign any initial values ie: ArrayList<Node> nodes;
+
+-initialization of an object: Allocates memory for the object and sets up an initial state which could include default values or an empty instance of its type: nodes = new ArrayList<Node>(); (can we can omit the type argument because of type inference)
+
+-In java, the compiler can type infer on the right hand side of the assignment operator by whats on the left handside ie:ArrayList<Node> nodes = new ArrayList<Node>(); can be shorten to ArrayList<Node> nodes = new ArrayList<>();
+
+-Adjacency List: An array or ArrayList made up of linkedlists - each element is a seperate linkedlist and each linkedlist has a unique node at the head. All adjacent neighbors to the head are added to that nodes's linkedlist. If we add an edge we just add the address of that node to the tail
+
+-runtime complexity to check and edge for an Adjacency List: O(v) (v is verticies or nodes)
+
+-space complexity for an Adjacency List: O(v + e) - verticies / nodes and e for edges
+
+-adjacency lists are used to represent a graph
+
+-when we initialize an object we are performing two main actions: 1. allocating space 2. assigning an initial value (even if its an empty object we assign null or its equivilent)
+
+-a function can only return a single value or object. However, this single returned entity can be a complex object that encapsualtes mulitple pieces of data.
+
+-depth first search: a search algorithm for traversing a tree or graph data structure. We pick a route, keep going and when we reach a dead end or node we have already visited, we back track to a previous node with unvisited adgacent neighbours and keep repeating this process
+
+-we can implement depth first search iteratively using a stack or we can utilize the call stack using recursion
+
+-depth first search uses a stack and searches in a downward manner, is good for algorithms that need to explore all paths, ie: mazes
+
+-Breadth first search (BFS): a search algorithm for traversing a tree or graph data structure. This is done one "level" at a time rather than one "branch" at a time
+
+-a node is a unit or module within a wider system
+
+-if two nodes are connected in an undirected graph (two way relationship), they have what is known as adjancy (close or near)
+
+-directed graphs have only one way connections
+
+-an edge in a graph is a connection between nodes
+
+-an adjacency matrix (2d array or grid) can represent a graph and comprimises of nodes and edges
+
+-breadth first search uses a queue for storing unvisited nodes and searches in a level wise manner, is good for algorithms that need to find the shortest path, ie: GPS map navigations
+
+-the key difference between BFS and DFS (breadth and depth first search) lies in their traversal biases and the order in which they visit nodes
+
+-breadth traverses level by level, utilzes a que, siblings are visited before children and better if destination is on average close to the start
+
+-depth traverses branch by branch, utilizes a stack, children are visited before siblings, better if destination is on average far from the start
+
+-I/O operations such as reading from or writing to disk can be slower than in-memory operations, programs that perform a lot of I/O operations may have longer execution times.
+
+-the execution time for a program can vary with factors such as: length and complexity of logic (longer and more complex means more work for cpu), algorithm efficiency, input size, I/O operations, harware, parallelism, compiler / interpretor optimisations and language / runtime environment. 
+
+-there are linear data structures (elements are arranged in sequence) and there is non linear data structures (elements are arranged in a heirarcy or interconnected manner). Trees and graphs are examples of non-linear and arrays, linkedlists, stacks and ques are examples of linear.
+
+-graphs: collection of nodes connected by edges. They can be cyclic or acyclic meaning multiple paths between nodes possible. They can be directed (one way relationship between nodes) or undirected (two way relationship). They are different to trees as edges can connect any two nodes, they are not restricted to a parent / child relationship. They are great for representing and modelling networks.
+
+-trees: a non linear data structure where nodes are organised in a hierarchy with a single root node. It is a type of graph. Only one path between any two nodes (acyclic). Consists of nodes connected by edges. One node is designated as the root. Each node has exactly one parent (except for the root). Nodes can have zero or more children. Leaves are nodes with no children. All nodes are reachable from the root. Binary (each nodes has at most only two children), binary search (all values in the nodes left sub-tree is less than the nodes value and values in the nodes right sub-tree are greater), avl and red-black trees (self balancing binary search trees) are all examples of trees. They are ideal for representing heirarchical data such as file systems, html DOM, family or organisational structures. BST's are great for searching and sorting.
+
+trees: root node does not have any incoming edges, only outgoing edges. Leaf nodes do have incoming edges but do not have any outgoing edges, branch nodes sits in the middle of the former two and have both incoming and outgoing edges. Parents are nodes that have outgoing edges. Nodes that have incoming edges are known as a child, nodes can be both parent and child (have both incoming and outgoing nodes). Any two children that share the same parent are known as siblings. A sub tree is a smaller tree held within a larger tree. The size of a tree is equal to the number of nodes. Depth is the number of edges below the root node. Height is the number of edges above the furthest leaf node, its sort of like the inverse of depth.
+
+-Binary Tree: has no more than two children so a node can have one child
+
+-Binary Search Tree: the root node value is greater than the left child but smaller than the right child, this is true of all sub trees. The left most child should be the smallest value in the tree and the right most child should be the greatest. This arrangement is for quick look up. The runtime complexity to find a value in a BST is O(log n) in best case.
+
+-Binary Search Tree (BST): a tree data structure, where each node is greater than its left child, but less than its right. The benefit of a BST is that it is easy to locate a node when they are in order. Time complexity: best case O(log n) and worst case O(n)
+
+-its alot easier to use recursion if we use a helper method
+
+-when looking at a function or method, think in terms of PPF. Purpose, Parameters and Functionality
+
+-the order in which you insert nodes into a BST does matter if it is unbalanced
+
+-tree traversal is the process of visiting all the nodes of a tree, we dont have random access so we begin at the root node and follow a certain proceedure to visit all of the nodes
+
+-three types of tree traversal: in-order, post-order and pre-order
+
+-in order traversal will navigate a tree in order (left -> root -> right)
+
+-post order traversal is used to delete a tree from leaf to root (left -> right -> root)
+
+-pre order traversal is used to create a copy of a tree (root -> left -> right)
+
+-a nano second is a billionth of a second
+
+
+=================================================================================================================================================================================================================================
+
+*to do - revisit quick sort
+
+
+nextyear - C#, sql server, asp.net core, swift, kotlin, C++, data structures and algos, design principals
+
+IP: 159.196.169.253
+=========================================================================================================================================================
+
